@@ -76,16 +76,12 @@
 
     <!-- Navbar -->
     {% include 'partials/_navbar.html' %}
-    <!-- Sidebar -->
-    {% include 'partials/_sidebar.html' %}
-    <!-- Sharebar -->
-    {% include 'partials/_overlay_sharebar.html' %}
-
+    <div class="container">
+  
     {% block content %}
         
     {% endblock content %}
-    
-    
+  </div>
     <!-- Footer -->
     {% include 'partials/_footer.html' %}
 

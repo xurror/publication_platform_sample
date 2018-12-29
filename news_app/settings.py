@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'editors.apps.EditorsConfig',
     'news.apps.NewsConfig',
-    'readers.apps.ReadersConfig',
+    'contacts.apps.ContactsConfig',
     'pages.apps.PagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',

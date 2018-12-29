@@ -9,11 +9,13 @@
     
 <div class="ui inverted borderless transparent main menu">
     <div class="ui container right">
-        <div class="item">
-            <div class="ui transparent primary icon input"> 
-                <input type="text" placeholder="Search">
-                <i class="fas fa-search icon"></i>
-            </div>
+        <div class="ui item category search">
+            <form action="{% url 'search' %}" method="GET">
+                <div class="ui transparent primary icon input"> 
+                    <input class="prompt" name="keywords" type="search" placeholder="Search" value="{{values.keywords}}">
+                    <i class="fas fa-search icon"></i>
+                </div>
+            </form>
         </div>
         <div {% if '/' == request.path %}
             class="nav-item active mr-3"
