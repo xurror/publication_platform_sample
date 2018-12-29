@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block title %}
-    | Home
+    | Courses
 {% endblock title %}
     
-
 {% block content %}
 <div class="container">
     <hr>
@@ -20,12 +18,12 @@
                         
                     <div class="column">
                             <a class="nav-link" href="">
-                                <h3 class="text-center text-uppercase text-dark">{{key.title}}</h3>
+                                <h3 class="text-center text-uppercase text-dark">{{ key.title }}</h3>
                             </a>
                         <p class="card-body">{{key.description}}</p>
                         <p>
                             <i class="fas fa-user"></i> By {{key.editor}}
-                            <i class="fas fa-clock"></i> {{key.published_date | timesince}}
+                            <i class="fas fa-clock"></i> {{ key.published_date | timesince }} ago
                         </p>
                         <hr>
                     </div>
@@ -33,7 +31,7 @@
                     
             {% else %}
             
-                <div class="column">
+            <div class="column">
                     <p>No news available</p>
                 </div>
             {% endif %}

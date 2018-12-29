@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'editors.apps.EditorsConfig',
+    'news.apps.NewsConfig',
+    'readers.apps.ReadersConfig',
     'pages.apps.PagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -76,11 +79,13 @@ WSGI_APPLICATION = 'news_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -127,3 +132,14 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'news_app/static')]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Messages
+
+from django .contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
+
+# Accounts Redirect
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
